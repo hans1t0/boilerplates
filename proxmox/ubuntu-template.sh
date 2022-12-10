@@ -4,7 +4,7 @@ wget https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-amd64.i
 sudo virt-customize -a jammy-server-cloudimg-amd64.img --install qemu-guest-agent
 sudo qm create 8000 --name "ubuntu-2204-cloudinit-template" --memory 2048 --cores 2 --net0 virtio,bridge=vmbr0
 sudo qm importdisk 8000 jammy-server-cloudimg-amd64.img local-lvm
-sudo qm set 8000 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-9000-disk-1
+sudo qm set 8000 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-8000-disk-0
 sudo qm set 8000 --boot c --bootdisk scsi0
 sudo qm set 8000 --ide2 local-lvm:cloudinit
 sudo qm set 8000 --serial0 socket --vga serial0
